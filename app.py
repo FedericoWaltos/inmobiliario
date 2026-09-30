@@ -154,7 +154,7 @@ if series["fecha"].nunique() >= 2:
         rate = st.selectbox("Variación",["Var_periodo_%","Var_4p_%","Var_12p_%"],
                             format_func=lambda z: {"Var_periodo_%":"Vs. período anterior","Var_4p_%":"4 períodos","Var_12p_%":"12 períodos"}[z])
         fig=px.line(series,x="fecha",y=rate,color="Fuente",markers=True,
-                    labels={"fecha":"Fecha",rate":"Variación %"})
+                    labels={"fecha":"Fecha", rate:"Variación %"})
         st.plotly_chart(fig,use_container_width=True)
         st.caption("La equivalencia semanal/mensual/trimestral/interanual depende de la frecuencia efectiva de snapshots. La V2 preserva cada corte para no inventar historia.")
 else:
